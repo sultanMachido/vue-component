@@ -4,6 +4,9 @@
 
 <script>
 import Header from './components/Header.vue'
+import logo from './assets/logo.png'
+
+
 
 export default {
   name: 'App',
@@ -16,17 +19,20 @@ export default {
         {
         index:0,
         text:'I am info one',
-        indicator:true
+        indicator:true,
+        image:''
       },
         {
         index:1,
         text:'I am info two',
-        indicator:false
+        indicator:false,
+        image:logo
       },
         {
         index:2,
         text:'I am info three',
-        indicator:false
+        indicator:false,
+        image:logo
       }
       ],
       currentIndicatorPosition:0,
@@ -39,40 +45,40 @@ export default {
     }
   },
   
-  methods:{
-    moveIndicator(){
-      let lastPosition = this.info.length - 1;
-      let nextPosition
+  // methods:{
+  //   moveIndicator(){
+  //     let lastPosition = this.info.length - 1;
+  //     let nextPosition
 
-        if(this.currentIndicatorPosition === lastPosition){
-        console.log(this.info[this.startPosition],'here');
-         this.info[this.currentIndicatorPosition].indicator = false;
-        this.info[this.startPosition].indicator = true
-        this.currentIndicatorPosition = this.startPosition
-         console.log(this.info[this.startPosition],'here');       
-     }else{
-        this.info[this.currentIndicatorPosition].indicator = false;
-     nextPosition = this.currentIndicatorPosition + 1;
-     this.currentIndicatorPosition = nextPosition
+  //       if(this.currentIndicatorPosition === lastPosition){
+  //       console.log(this.info[this.startPosition],'here');
+  //        this.info[this.currentIndicatorPosition].indicator = false;
+  //       this.info[this.startPosition].indicator = true
+  //       this.currentIndicatorPosition = this.startPosition
+  //        console.log(this.info[this.startPosition],'here');       
+  //    }else{
+  //       this.info[this.currentIndicatorPosition].indicator = false;
+  //    nextPosition = this.currentIndicatorPosition + 1;
+  //    this.currentIndicatorPosition = nextPosition
 
-     console.log(this.currentIndicatorPosition,'current');
-     console.log(nextPosition,'next')
+  //    console.log(this.currentIndicatorPosition,'current');
+  //    console.log(nextPosition,'next')
 
     
-          this.info[nextPosition].indicator = true;
+  //         this.info[nextPosition].indicator = true;
    
-     }
+  //    }
    
     
      
      
     
 
-    }
-  },
-  created(){
-    setInterval(this.moveIndicator,1000);
-  }
+  //   }
+  // },
+  // created(){
+  //   setInterval(this.moveIndicator,1000);
+  // }
 }
 </script>
 
